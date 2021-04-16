@@ -11,6 +11,9 @@ app = Flask(__name__, static_url_path='/static')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 FOLDER = './static/'
 
+if not os.path.exists(FOLDER):
+    os.mkdir(FOLDER)
+
 
 def allowed_file(filename):
     return '.' in filename and \
