@@ -1,0 +1,95 @@
+<style>
+h1 {text-align: center; padding-top: 50}
+p {text-align: center;}
+div {text-align: center;}
+
+.center {
+  height: 600px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.middle {
+  margin: 50;
+  padding-left: 30%;
+}
+
+</style>
+{% extends "base.html" %}
+{% block title %}Upload{% endblock %}
+{% block content %}
+
+
+<html>
+<head>
+<style>
+body {
+  background-color: lightblue;
+}
+
+table {
+  background-color: white;
+  margin-top: 100;
+  width: 50%;
+}
+</style>
+</head>
+<body>
+
+<div class="center">
+  <div>
+    <h1 class= "title">Demonstrator Image Recognition</h1>
+  </div>
+
+  <div class="middle">
+    <form action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+      <p style="padding-right: 100">
+        <input type='file' name='file[]' multiple=''>
+        <input type='submit' value='Uploaden'>
+      </p>
+    </form>
+  </div>
+
+  <div>
+    <form action="{{url_for('clear')}}" method="post">
+      <p style="margin-left: 190">
+        <button name="exportBtn" type="submit">Clear</button>
+      </p>
+    </form>
+  </div>
+
+
+  <div class="middle" style="padding-bottom: 20">
+    <table>
+      <th>Files</th>
+      {% for name in files: %}
+      <tr><td>{{ name }}</td></tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+<body>
+<p>By Jasper, Kay, Nomi and Diego</p>
+
+</body>
+
+{% endblock %}

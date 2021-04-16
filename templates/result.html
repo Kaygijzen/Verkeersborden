@@ -1,0 +1,80 @@
+<style>
+h1 {text-align: center; padding: 30}
+p {text-align: center;}
+div {text-align: center;}
+body {
+    background-color: lightblue;
+}
+table {
+        background-color: white;
+        text-align: center;
+        width: 450;
+        border-radius: 14px;
+}
+th {
+        width: 100;
+        height: 50;
+        border-bottom-style: solid;
+}
+tr {
+        width: 100;
+        height: 100;
+        border-width: 1;
+        border-color: black
+        background-color: green
+}
+
+</style>
+{% extends "base.html" %}
+{% block title %}Results{% endblock %}
+
+{% block content %}
+
+<html>
+<head>
+        <style>
+        body {
+          background-color: lightblue;
+        }
+        </style>
+</head>
+<body>
+
+
+<div>
+        <h1> These are the results from the Demonstrator</h1>
+
+        <form action="{{url_for('download_file')}}" method="post">
+                <button name="exportBtn" type="submit">Download results</button>
+        </form>
+
+        <div style="margin-left: 36%; margin-bottom: 50">
+                <table>
+                        <tr style="height: 50">
+                                <th>Picture</th>
+                                <th>Filename</th>
+                                <th>Prediction</th>
+                        </tr>
+                        {% for prediction in predictions: %}
+                                <tr>
+                                        <td>
+                                                <img src="{{ url_for('static', filename='./' + prediction[0]) }}" alt="got" width="80" height="80">
+                                        </td>
+                                        <td style="border-left-style: inset; border-right-style: inset">
+                                                <p>{{ prediction[0] }}</p>
+                                        </td>
+                                        <td>
+                                                <p>{{ prediction[1] }}</p>
+                                        </td>
+                                </tr>
+                        {% endfor %}
+                </table>
+        </div>
+ </div>
+
+</body>
+</html>
+
+
+
+{% endblock %}
