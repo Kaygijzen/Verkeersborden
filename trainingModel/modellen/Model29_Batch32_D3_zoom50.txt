@@ -1,0 +1,9 @@
+Val_accuracy: 0.9800000190734863
+Val_loss: 0.11
+Train_accuracy: 0.98
+Train_loss: 0.08
+Batch size: 32
+Img size: 112
+training data: 2517
+valid data: 627
+Extra info: 1048 images per bord, met rescale, 1 dense layer, filters 32>64, zoom 0.50

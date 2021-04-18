@@ -1,0 +1,9 @@
+Val_accuracy: 0.8999999761581421
+Val_loss: 0.42
+Train_accuracy: 0.96
+Train_loss: 0.31
+Batch size: 32
+Img size: 112
+training data: 3636
+valid data: 909
+Extra info: Nieuwe dataset 1500 images per bord, zoom range 0.5 met rescale. 2 dense layers op het eind van 512 naar 3,filters 16 > 32 ipv 32 >64
