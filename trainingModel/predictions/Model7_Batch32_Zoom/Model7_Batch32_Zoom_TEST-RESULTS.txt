@@ -1,0 +1,20 @@
+30
+goed: 26
+fout: 0
+acc: 100%
+
+50
+goed: 21
+fout: 5
+acc: 81%
+
+100
+goed: 23
+fout: 3
+acc: 88%
+
+
+TOTAAL
+goed: 70
+fout: 8
+acc: 90%
